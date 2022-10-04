@@ -30,8 +30,13 @@ export default function ConversationsProvider({ children }) {
     return { ...conversation, recipients }
   })
 
+  const value = {
+    conversations: formattedConversations,
+    createConversation
+  }
+
   return (
-    <ConversationsContext.Provider value={{ conversations: formattedConversations, createConversation }}>
+    <ConversationsContext.Provider value={value}>
       {children}
     </ConversationsContext.Provider>
   )
